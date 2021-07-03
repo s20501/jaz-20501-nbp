@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import com.example.demo.Service.NPBService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
@@ -11,8 +12,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/nbp")
 public class NBPController {
 
+    private NPBService nbpService;
 
-
+    public NBPController(NPBService nbpService){
+        this.nbpService = nbpService;
+    }
 
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
@@ -30,6 +34,6 @@ public class NBPController {
             @ApiParam(value = "Data koniec", example = "12-01-02")
             @PathVariable String endDate
             ){
-        return ResponseEntity.ok(0.4d);
+        return ResponseEntity.ok(nbpService.getAverage(currency, startDate, endDate));
     }
 }
