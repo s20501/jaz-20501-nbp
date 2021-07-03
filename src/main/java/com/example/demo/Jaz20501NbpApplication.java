@@ -1,13 +1,13 @@
-package com.example.kolos;
+package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KolosApplication {
+public class Jaz20501NbpApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(KolosApplication.class, args);
+		SpringApplication.run(Jaz20501NbpApplication.class, args);
 	}
 
 }

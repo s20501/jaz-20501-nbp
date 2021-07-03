@@ -1,10 +1,10 @@
-package com.example.kolos;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KolosApplicationTests {
+class Jaz20501NbpApplicationTests {
 
 	@Test
 	void contextLoads() {
