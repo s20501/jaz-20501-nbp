@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiResponses;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/nbp")
 public class NBPController {
@@ -29,9 +31,9 @@ public class NBPController {
             @ApiParam(value = "Waluta jaką checesz uzyskać", example = "eur")
             @PathVariable String currency,
 
-            @ApiParam(value = "Data start", example = "12-01-02")
+            @ApiParam(value = "Data start", example = "2020-02-02")
             @PathVariable String startDate,
-            @ApiParam(value = "Data koniec", example = "12-01-02")
+            @ApiParam(value = "Data koniec", example = "2020-02-02")
             @PathVariable String endDate
             ){
         return ResponseEntity.ok(nbpService.getAverage(currency, startDate, endDate));
