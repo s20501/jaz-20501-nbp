@@ -1,8 +1,7 @@
 package com.example.demo.Repository;
 
+import com.example.demo.Model.Log;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class AverageRequestRepository {
+public interface LogRepository extends JpaRepository<Log,Long> {
 }
