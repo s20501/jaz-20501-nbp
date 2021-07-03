@@ -6,6 +6,8 @@ import com.example.demo.Repository.LogRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.Date;
+
 @Service
 public class NPBService {
 
@@ -24,8 +26,8 @@ public class NPBService {
         AverageRequest averageRequest = restTemplate.getForObject(url,AverageRequest.class);
 
         Double response =  averageRequest.getRates().stream().mapToDouble(r -> r.mid).average().orElse(-1.0d);
-//        Log log = new Log(currency,startDate,endDate,"2020-15-3",response);
-//        logRepository.save(log);
+        Log log = new Log(currency,startDate,endDate,new Date().toString(),response);
+        logRepository.save(log);
 
         return response;
 
